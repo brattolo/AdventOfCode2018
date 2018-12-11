@@ -4,14 +4,10 @@ module Day1Program
 open System
 open System.IO
 open System.Linq
+open Common
 
-let readLines (filePath: string) = seq {
-    use sr = new StreamReader (filePath)
-    while not sr.EndOfStream do
-       yield sr.ReadLine()
-}
 
-let frequencyChanges = readLines "input.txt" |> Seq.map Int32.Parse
+let frequencyChanges = Common.readLines "input.txt" |> Seq.map Int32.Parse
 
 let applyFrequencyChange frequency change = 
       frequency + change
